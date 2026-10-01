@@ -29,7 +29,7 @@ export default async function JogoPage({ params }: PageProps) {
     const jogo: Jogo = await response.json();
 
     return (
-        <main>
+        <main className="flex flex-row">
             <div className="border-2 w-2/12">
                 <div className="relative w-full aspect-[2/3]">
                     <Image
@@ -39,20 +39,23 @@ export default async function JogoPage({ params }: PageProps) {
                         className="object-cover rounded-lg"
                     />
                 </div>
-                <div className="flex flex-row border-2 justify-center">
-                    <div className="">
+                <div className="flex flex-row justify-between pt-2 pb-2 pl-2 pr-2 bg-[#1D1D4D]">
+                    <button className="flex flex-col items-center justify-center">
                         <MdGamepad size={32}/>
                         <p>Jogado</p>
-                    </div>
-                    <div className="">
+                    </button>
+                    <button className="flex flex-col items-center justify-center">
                         <MdNotStarted size={32}/>
                         <p>Jogando</p>
-                    </div>
-                    <div className="">
+                    </button>
+                    <button className="flex flex-col items-center justify-center">
                         <MdDelete size={32}/>
                         <p>Abandonado</p>
-                    </div>
+                    </button>
                 </div>
+            </div>
+            <div className="ml-4">
+                <h2 className="text-5xl">{jogo.nome}</h2>
             </div>
 
         </main>

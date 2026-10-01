@@ -1,5 +1,6 @@
 import { JogoCard } from "@/components/jogoCard";
 import { Jogo } from "@/types/jogo";
+import Link from "next/link";
 
 interface JogosResponse {
   content: Jogo[];
@@ -28,9 +29,11 @@ export default async function Home() {
 
   return (
     <>
-      <section className="grid grid-cols-12 gap-6 mt-4 md:grid-cols-5">
+      <section className="grid grid-cols-12 gap-6 mt-4 mb-4 md:grid-cols-5">
         {jogos.content.map((jogo) => (
-          <JogoCard key={jogo.id} jogo={jogo} />
+          <Link key={jogo.id} href={`/jogos/${jogo.id}`}>
+            <JogoCard key={jogo.id} jogo={jogo} />
+          </Link>
         ))}
       </section>
     </>

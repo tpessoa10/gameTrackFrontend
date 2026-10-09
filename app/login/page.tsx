@@ -2,9 +2,11 @@
 
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function LoginPage() {
   const router = useRouter()
+  const { login} = useAuth()
 
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
@@ -42,7 +44,7 @@ export default function LoginPage() {
 
       const data: { token: string } = await response.json();
 
-      sessionStorage.setItem("token", data.token);
+      login(data.token)
 
       router.push("/");
       router.refresh();

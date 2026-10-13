@@ -6,10 +6,10 @@ import Link from "next/link";
 export function Header() {
   const { isAuthenticated, logout } = useAuth()
   return (
-    <header className="bg-[#0B161E] border-b ">
+    <header className="bg-[#0B161E] ">
       <div className="mx-auto flex h-16 max-w-11/12 items-center justify-between">
         <Link href="/" className="text-xl font-bold">
-          GameBacklog
+          GameTrack
         </Link>
 
         <nav className="flex items-center gap-6">

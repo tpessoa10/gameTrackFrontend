@@ -195,8 +195,8 @@ async function adicionarMinhaLista(statusJogo: StatusJogo) {
 
 
     return (
-        <main className="flex flex-row">
-            <div className=" w-2/12">
+        <main className="flex flex-row mt-4">
+            <div className=" w-2/12 ml-12">
                 <div className="relative w-full aspect-[2/3]">
                     <Image
                         src={jogo.capa}
@@ -254,8 +254,9 @@ async function adicionarMinhaLista(statusJogo: StatusJogo) {
                 </div>
             </div>
 
-            <div className="ml-4">
-                <h2 className="text-5xl">{jogo.nome}</h2>
+            <div className="ml-8 w-10/12 mr-12">
+                <h2 className="text-5xl mb-2">{jogo.nome}</h2>
+                <p className="">{jogo.descricao}</p>
             </div>
         </main>
     );

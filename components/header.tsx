@@ -17,12 +17,16 @@ export function Header() {
             <div className="flex gap-4">
               <Link href="/minha-lista">Minha Lista</Link>
 
-              <button onClick={logout}>
+              <button className="hover:cursor-pointer" onClick={logout}>
                 Sair
               </button>
             </div>
           ) : (
-            <Link href="/login">Entrar</Link>
+            <Link href="/login">
+              <button className="hover:cursor-pointer">
+                Entrar
+              </button>
+            </Link>
           )}
         </nav>
       </div>
